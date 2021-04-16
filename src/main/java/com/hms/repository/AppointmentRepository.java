@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.support.JpaRepositoryImplementati
 
 import com.hms.entity.Appointment;
 
-public interface AppointmentRepository extends JpaRepositoryImplementation<Appointment, Long>{
+public interface AppointmentRepository extends JpaRepository<Appointment, Long>{
 	
 
 }

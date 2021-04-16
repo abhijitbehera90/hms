@@ -1,4 +1,6 @@
 package com.hms.service;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +19,13 @@ public class AppointmentService {
 	
 	public Appointment update(Appointment appointment) {
 		return appointmentRepository.save(appointment);
+	}
+	
+	public List<Appointment> getAll() {
+		return appointmentRepository.findAll();
+	}
+	
+	public Appointment getById(Long id) {
+		return appointmentRepository.getOne(id);
 	}
 }
