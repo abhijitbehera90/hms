@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hms.bean.AppointmentInfo;
 import com.hms.entity.Appointment;
 import com.hms.repository.AppointmentRepository;
 
@@ -13,8 +14,8 @@ public class AppointmentService {
 	@Autowired
 	AppointmentRepository appointmentRepository;
 	
-	public Appointment register(Appointment appointment) {
-		return appointmentRepository.save(appointment);
+	public Appointment register(AppointmentInfo appointmentInfo) {
+		return appointmentRepository.save(appointmentInfo.convertToEntity());
 	}
 	
 	public Appointment update(Appointment appointment) {

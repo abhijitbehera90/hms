@@ -35,10 +35,10 @@ public class AppointmentRestController {
 	}
 	
 	@RequestMapping(value="/register" , method=RequestMethod.POST) 
-	Appointment register(@RequestBody Appointment appointment) {
-		appointment.setRegistrationNo("14042021001");
+	Appointment register(@RequestBody AppointmentInfo appointmentInfo) {
+		appointmentInfo.setRegistrationNo("14042021001");
 		
-		return appointmentService.register(appointment);		
+		return appointmentService.register(appointmentInfo);		
 	}
 	
 	@RequestMapping(value="/update" , method=RequestMethod.PUT) 

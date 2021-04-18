@@ -1,5 +1,7 @@
 package com.hms.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,9 +23,9 @@ public class Appointment {
 	@Column
 	private String address;
 	@Column
-	private String appointmentDate;
+	private  Date appointmentDate;
 	@Column
-	private String previousVisitDate;
+	private Date previousVisitDate;
 	@Column
 	private String previousAppointmentSerialNo;
 	@Column
@@ -55,16 +57,16 @@ public class Appointment {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getAppointmentDate() {
+	public Date getAppointmentDate() {
 		return appointmentDate;
 	}
-	public void setAppointmentDate(String appointmentDate) {
-		this.appointmentDate = appointmentDate;
+	public void setAppointmentDate(Date date) {
+		this.appointmentDate = date;
 	}
-	public String getPreviousVisitDate() {
+	public Date getPreviousVisitDate() {
 		return previousVisitDate;
 	}
-	public void setPreviousVisitDate(String previousVisitDate) {
+	public void setPreviousVisitDate(Date previousVisitDate) {
 		this.previousVisitDate = previousVisitDate;
 	}
 	public String getPreviousAppointmentSerialNo() {
