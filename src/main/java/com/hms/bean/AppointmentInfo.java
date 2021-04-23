@@ -2,6 +2,15 @@ package com.hms.bean;
 
 public class AppointmentInfo {
 
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import com.hms.entity.Appointment;
+
+public class AppointmentInfo {
+
+	private String id;
 	private String name;
 	private String mob;
 	private String address;
@@ -51,10 +60,39 @@ public class AppointmentInfo {
 	public void setRegistrationNo(String registrationNo) {
 		this.registrationNo = registrationNo;
 	}
+
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	
 	
-	
-	
-	
-	
+	public Appointment convertToEntity() {
+		
+		Appointment appointment= new Appointment();
+		
+		SimpleDateFormat format= new SimpleDateFormat("DD/MM/YYYY");
+		appointment.setId(Long.valueOf(id));
+		appointment.setName(name);
+		appointment.setAddress(address);
+		appointment.setPreviousAppointmentSerialNo(previousAppointmentSerialNo);
+		appointment.setRegistrationNo(registrationNo);
+		try {
+			if(appointmentDate!=null || appointmentDate.equals(""))
+			appointment.setAppointmentDate(format.parse(appointmentDate));
+			if(previousVisitDate!=null || previousVisitDate.equals(""))
+			appointment.setPreviousVisitDate(format.parse(previousVisitDate));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return appointment;
+	}
+
 }
