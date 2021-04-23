@@ -1,12 +1,5 @@
 package com.hms.bean;
 
-public class AppointmentInfo {
-
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
-import com.hms.entity.Appointment;
 
 public class AppointmentInfo {
 
