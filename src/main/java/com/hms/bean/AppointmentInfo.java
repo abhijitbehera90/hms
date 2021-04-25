@@ -71,8 +71,10 @@ public class AppointmentInfo {
 		Appointment appointment= new Appointment();
 		
 		SimpleDateFormat format= new SimpleDateFormat("DD/MM/YYYY");
+		if(id!=null  && id!="0")			
 		appointment.setId(Long.valueOf(id));
 		appointment.setName(name);
+		appointment.setMob(mob);
 		appointment.setAddress(address);
 		appointment.setPreviousAppointmentSerialNo(previousAppointmentSerialNo);
 		appointment.setRegistrationNo(registrationNo);
