@@ -1,12 +1,13 @@
-/**
- * Created by Assaycr-02 on 11/28/2016.
- */
-(function () {
+﻿(function () {
     'use strict';
-angular
-    .module('Home')
-    .controller('HomeController',['$scope', function ($scope)
-    {
 
-    }]);
+    angular
+        .module('hmsapp')
+        .controller('HomeController', HomeController);
+
+    HomeController.$inject = ['$rootScope'];
+    function HomeController($rootScope) {
+        var vm = this;
+    }
+
 })();
