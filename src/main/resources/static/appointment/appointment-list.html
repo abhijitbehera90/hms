@@ -19,16 +19,26 @@
                         <table ng-table="tableParams" show-filter="true" class="table ng-scope ng-table">
                         <thead>
                         <tr>
-                            <th>#</th>
+                            <th>Id</th>
+                            <th>Registration No</th>
                             <th>Patient Name</th>
-                            <th>Department</th>
+                            <th>Patient Mobile NO</th>
+                            <th>Doctor</th>
                             <th>Appointment Date</th>
-                            <th>Active / Inactive</th>
+<!--                             <th>Active / Inactive</th> -->
                         
                             <th style="max-width: 30px">&nbsp;</th>
                         </tr>
                         </thead>
                         <tbody>
+                      <tr ng-repeat="x in appointmemtList">
+                      <td>{{x.id}}</td>
+                      <td>{{x.registrationNo}}</td>
+                      <td>{{x.patientId.name}}</td>
+                      <td>{{x.patientId.mob}}</td>
+                      <td>{{x.doctorId.name}}</td>
+                      <td>{{x.appointmentDate | date :  "dd-MM-yyyy" }}</td>
+                      </tr>
                       
                         <tr>
                             <td ng-show="$data.length==0" class="info no_data" colspan="9">
