@@ -68,7 +68,7 @@
       
       
        ,
-                $urlRouterProvider.otherwise('/login');
+                $urlRouterProvider.otherwise('/');
 
     }
          
