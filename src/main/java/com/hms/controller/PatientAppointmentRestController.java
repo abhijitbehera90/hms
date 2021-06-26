@@ -38,13 +38,13 @@ public class PatientAppointmentRestController {
 	
 	@RequestMapping(value="/register" , method=RequestMethod.POST) 
 	PatientAppointment register(@RequestBody PatientAppointmentInfo patientappointmentInfo) {
-		patientappointmentInfo.setRgistrationNo("14042021001");
+		patientappointmentInfo.setRegistrationNo("");
 		return patientappointmentService.register(patientappointmentInfo);		
 	}
 	
 	@RequestMapping(value="/update" , method=RequestMethod.PUT) 
 	PatientAppointment update(@RequestBody PatientAppointmentInfo patientappointmentinfo) {
-		//appointment.setRegistrationNo("14042021001");
+		
 		
 		return patientappointmentService.update(patientappointmentinfo.convertToEntity());		
 	}

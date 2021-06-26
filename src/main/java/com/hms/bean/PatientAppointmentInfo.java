@@ -16,7 +16,7 @@ public class PatientAppointmentInfo {
 	private String appointmentDate;
 	private String previousVisitDate;
 	private String  priviousAppSerialNo;
-	private String rgistrationNo;
+	private String registrationNo;
 	public String getId() {
 		return id;
 	}
@@ -53,11 +53,11 @@ public class PatientAppointmentInfo {
 	public void setPriviousAppSerialNo(String priviousAppSerialNo) {
 		this.priviousAppSerialNo = priviousAppSerialNo;
 	}
-	public String getRgistrationNo() {
-		return rgistrationNo;
+	public String getRegistrationNo() {
+		return registrationNo;
 	}
-	public void setRgistrationNo(String rgistrationNo) {
-		this.rgistrationNo = rgistrationNo;
+	public void setRegistrationNo(String registrationNo) {
+		this.registrationNo = registrationNo;
 	}
 	
 	
@@ -68,7 +68,7 @@ public PatientAppointment convertToEntity() {
 		if(id!=null  && id.trim()!="")			
 		appointment.setId(Long.valueOf(id));
 		appointment.setPriviousAppSerialNo(priviousAppSerialNo);
-		appointment.setRegistrationNo(rgistrationNo);
+		appointment.setRegistrationNo(registrationNo);
 		if(patientId!=null && patientId!="") {
 			Patient patient= new Patient();
 			patient.setId(Long.valueOf(patientId));

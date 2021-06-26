@@ -4,20 +4,12 @@ import com.hms.entity.Patient;
 
 public class Patientinfo
 {
-	private String   appointmentId;
 	private String id;
 	private String  name;
 	private String address;
 	private String mob;
 	
 	
-
-	public String getAppointmentId() {
-		return appointmentId;
-	}
-	public void setAppointmentId(String appointmentId) {
-		this.appointmentId = appointmentId;
-	}
 	public String getId() {
 		return id;
 	}

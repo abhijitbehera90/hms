@@ -2,26 +2,17 @@ package com.hms.entity;
 
 
 
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="Patient")
 public class Patient   {
-	
-	
-	@JoinColumn
-	@OneToMany(targetEntity = Patient.class)
-	List<PatientAppointment> appointmentId;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,14 +22,6 @@ public class Patient   {
     private String address;
     @Column
     private String mob;
-	
-	
-	public List<PatientAppointment> getAppointmentId() {
-		return appointmentId;
-	}
-	public void setAppointmentId(List<PatientAppointment> appointmentId) {
-		this.appointmentId = appointmentId;
-	}
 	public Long getId() {
 		return id;
 	}
