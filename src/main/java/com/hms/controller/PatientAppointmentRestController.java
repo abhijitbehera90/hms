@@ -40,7 +40,7 @@ public class PatientAppointmentRestController {
 	
 	@RequestMapping(value="/register" , method=RequestMethod.POST) 
 	PatientAppointment register(@RequestBody PatientAppointmentInfo patientappointmentInfo) {
-		patientappointmentInfo.setRegistrationNo("");
+	//	patientappointmentInfo.setRegistrationNo("");
 		return patientappointmentService.register(patientappointmentInfo);		
 	}
 	

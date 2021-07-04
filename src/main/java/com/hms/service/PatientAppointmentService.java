@@ -1,4 +1,5 @@
 package com.hms.service;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,17 +13,16 @@ import com.hms.repository.PatientAppointmentRepository;
 
 public class PatientAppointmentService {
 
+	
 	@Autowired
 	PatientAppointmentRepository patientappointmentRepository;
 	
 	public PatientAppointment register(PatientAppointmentInfo patientappointmentInfo) {
 		PatientAppointment patientAppointment=patientappointmentInfo.convertToEntity();
-		patientAppointment.setRegistrationNo(generateRegistrationNo(patientappointmentInfo.getAppointmentDate()));
+		patientAppointment.setRegistrationNo(generateRegistrationNo(patientAppointment.getAppointmentDate(),patientappointmentInfo.getAppointmentDate()));
 		return patientappointmentRepository.save(patientappointmentInfo.convertToEntity());
 	}
-	public long getCountByAppointmentDate(String appointmentDate ) {
-		return patientappointmentRepository.getCountByAppointmentDate(appointmentDate);
-	}
+	
 	public PatientAppointment update(PatientAppointment patientappointment) {
 		return patientappointmentRepository.save(patientappointment);
 	}
@@ -36,11 +36,13 @@ public class PatientAppointmentService {
 		return patientappointmentRepository.getOne(id);
 	}
 	
-	private String generateRegistrationNo(String appointmentDate) {
-	String regNo="";
+	private String generateRegistrationNo(Date appointmentDate,String  appDate) {
+	
 	long count=patientappointmentRepository.getCountByAppointmentDate(appointmentDate);
 	
-	return appointmentDate+"-"+count;
+	
+	
+	return appDate+"-"+(++count);
 	}
 	
 }
