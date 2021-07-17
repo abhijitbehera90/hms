@@ -18,9 +18,11 @@ public class PatientAppointmentService {
 	PatientAppointmentRepository patientappointmentRepository;
 	
 	public PatientAppointment register(PatientAppointmentInfo patientappointmentInfo) {
+		System.out.println(patientappointmentInfo.getAppointmentDate());
 		PatientAppointment patientAppointment=patientappointmentInfo.convertToEntity();
+		System.out.println(patientAppointment.getAppointmentDate());
 		patientAppointment.setRegistrationNo(generateRegistrationNo(patientAppointment.getAppointmentDate(),patientappointmentInfo.getAppointmentDate()));
-		return patientappointmentRepository.save(patientappointmentInfo.convertToEntity());
+		return patientappointmentRepository.save(patientAppointment);
 	}
 	
 	public PatientAppointment update(PatientAppointment patientappointment) {
@@ -37,12 +39,14 @@ public class PatientAppointmentService {
 	}
 	
 	private String generateRegistrationNo(Date appointmentDate,String  appDate) {
-	
+	System.out.println(appDate);
+	System.out.println(appointmentDate.toString());
 	long count=patientappointmentRepository.getCountByAppointmentDate(appointmentDate);
 	
-	
-	
-	return appDate+"-"+(++count);
+	System.out.println(count);
+	String reg=(appDate+"-"+(++count)).replaceAll("/", "");
+	System.out.println(reg);
+	return reg;
 	}
 	
 }

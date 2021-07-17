@@ -81,7 +81,7 @@ public PatientAppointment convertToEntity() {
 			}
 			
 		
-		SimpleDateFormat format= new SimpleDateFormat("DD/MM/YYYY");
+		SimpleDateFormat format= new SimpleDateFormat("dd/MM/yyyy");
 		try {
 			if(appointmentDate!=null && !appointmentDate.equals(""))
 			appointment.setAppointmentDate(format.parse(appointmentDate));
